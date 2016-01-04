@@ -14,13 +14,16 @@ This image is available at: [hub.docker.com/r/dennismp/bitlbee/](https://hub.doc
 Build manually
 --------------
 
+```
 $ git clone https://github.com/dennis/docker-bitlbee
 $ docker build --rm -t dennismp/bitlbee .
+```
 
 Running
 -------
 
 It exposes port 6667 and use volume /var/lib/bitlbee for configuration files.
 
+```
 $ docker run -d --name=bitlbee -v /var/volumes/bitlbee:/var/lib/bitlbee/ dennismp/bitlbee
-
+```
