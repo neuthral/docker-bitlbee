@@ -67,4 +67,4 @@ RUN apt-get -qy purge git mercurial autoconf && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /build
 
-CMD ["/usr/sbin/bitlbee", "-D", "-n"]
+CMD ["/usr/sbin/bitlbee", "-F", "-n"]
