@@ -1,5 +1,5 @@
-FROM debian:jessie
-MAINTAINER dennis@moellegaard.dk
+FROM debian:stretch
+MAINTAINER airey.andy@gmail.com
 
 EXPOSE 6667
 VOLUME ["/var/lib/bitlbee/"]
@@ -13,19 +13,20 @@ ENV LANGUAGE en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 # Prepare repositories
-RUN echo 'deb http://code.bitlbee.org/debian/master/jessie/amd64/ ./' > /etc/apt/sources.list.d/bitlbee.list && \
-    echo 'deb http://download.opensuse.org/repositories/home:/jgeboski/Debian_8.0 ./' > /etc/apt/sources.list.d/jgeboski.list && \
+RUN apt-get -qy update && apt-get -qy install gnupg && \
     apt-key add /build/bitlbee.key && \
-    apt-key add /build/jgeboski.key
+    apt-key add /build/jgeboski.key && \
+    echo 'deb http://code.bitlbee.org/debian/master/stretch/amd64/ ./' > /etc/apt/sources.list.d/bitlbee.list && \
+    echo 'deb http://download.opensuse.org/repositories/home:/jgeboski/Debian_9.0 ./' > /etc/apt/sources.list.d/jgeboski.list && \
+    apt-get -qy update && \
+    apt-get -qy dist-upgrade && \
+    apt-get -qy upgrade
 
 # Install dependencies and Facebook and Steam plugin
-RUN apt-get -qy --force-yes update && \
-    apt-get -qy --force-yes dist-upgrade && \
-    apt-get -qy --force-yes upgrade && \
-    apt-get -qy --force-yes install build-essential git mercurial autoconf libtool gettext \
+RUN apt-get -qy install build-essential git mercurial autoconf libtool gettext \
                                     libglib2.0-dev libotr5-dev libgcrypt20-dev libpurple-dev libwebp-dev libjson-glib-dev libprotobuf-c-dev protobuf-c-compiler && \
-    apt-get -qy --force-yes install bitlbee-libpurple bitlbee-dev && \
-    apt-get -qy --force-yes install bitlbee-facebook bitlbee-steam
+    apt-get -qy install bitlbee-libpurple bitlbee-dev && \
+    apt-get -qy install bitlbee-facebook bitlbee-steam
 
 # Install Telegram plugin
 RUN git clone --recursive https://github.com/majn/telegram-purple && \

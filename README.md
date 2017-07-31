@@ -17,21 +17,25 @@ Docker registry
 
 This image is available at: [hub.docker.com/r/aairey/bitlbee/](https://hub.docker.com/r/aairey/bitlbee/)
 
-Build manually
---------------
+Usage
+-----
 
+It exposes port 6667 and use volume `/var/lib/bitlbee` for configuration files.
+
+```shell
+$ docker run -d --name=bitlbee -v /var/volumes/bitlbee:/var/lib/bitlbee/ aairey/bitlbee
 ```
+
+After this you can use your regular IRC client to connect to port 6667 of the container/host's IP address.
+
+Build
+-----
+
+If you would like to build this image manually, run:
+
+```shell
 $ git clone https://github.com/aairey/docker-bitlbee
 $ docker build --rm -t aairey/bitlbee .
-```
-
-Running
--------
-
-It exposes port 6667 and use volume /var/lib/bitlbee for configuration files.
-
-```
-$ docker run -d --name=bitlbee -v /var/volumes/bitlbee:/var/lib/bitlbee/ aairey/bitlbee
 ```
 
 Thanks
