@@ -1,5 +1,5 @@
 FROM debian:stretch
-MAINTAINER airey.andy@gmail.com
+MAINTAINER aairey <airey.andy+docker@gmail.com>
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
@@ -7,7 +7,7 @@ ARG VCS_REF
 ARG VERSION
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="bitlbee" \
-      org.label-schema.description="Bitlbee Docker image with populare plugins" \
+      org.label-schema.description="Bitlbee Docker image with popular plugins" \
       org.label-schema.url="https://www.bitlbee.org/" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/aairey/docker-bitlbee" \
