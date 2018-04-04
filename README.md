@@ -1,7 +1,7 @@
 docker-bitlbee
 ==============
 
-[![](https://images.microbadger.com/badges/image/aairey/bitlbee.svg)](https://microbadger.com/images/aairey/bitlbee "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/aairey/bitlbee.svg)](https://microbadger.com/images/aairey/bitlbee "Get your own version badge on microbadger.com")
+[![Docker Automated build](https://img.shields.io/docker/automated/aairey/bitlbee.svg)](https://hub.docker.com/r/aairey/bitlbee)  [![](https://images.microbadger.com/badges/image/aairey/bitlbee.svg)](https://microbadger.com/images/aairey/bitlbee "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/aairey/bitlbee.svg)](https://microbadger.com/images/aairey/bitlbee "Get your own version badge on microbadger.com")
 
 This repo provides the steps necessary to build a
 [BitlBee](http://www.bitlbee.org/) docker image.

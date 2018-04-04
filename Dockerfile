@@ -38,7 +38,7 @@ RUN apt-get -qy update && apt-get -qy install gnupg && \
 
 # Install dependencies and Facebook and Steam plugin
 RUN apt-get -qy install build-essential git mercurial autoconf libtool gettext \
-                                    libglib2.0-dev libotr5-dev libgcrypt20-dev libpurple-dev libwebp-dev libjson-glib-dev libprotobuf-c-dev protobuf-c-compiler && \
+                        libglib2.0-dev libotr5-dev libgcrypt20-dev libpurple-dev libwebp-dev libjson-glib-dev libprotobuf-c-dev protobuf-c-compiler && \
     apt-get -qy install bitlbee-libpurple bitlbee-dev && \
     apt-get -qy --allow-unauthenticated install bitlbee-facebook bitlbee-steam
 
