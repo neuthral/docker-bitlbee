@@ -1,26 +1,28 @@
 docker-bitlbee
 ==============
 
-[![Docker Automated build](https://img.shields.io/docker/automated/aairey/bitlbee.svg)](https://hub.docker.com/r/aairey/bitlbee)  [![](https://images.microbadger.com/badges/image/aairey/bitlbee.svg)](https://microbadger.com/images/aairey/bitlbee "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/aairey/bitlbee.svg)](https://microbadger.com/images/aairey/bitlbee "Get your own version badge on microbadger.com")
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Slack_CMYK.svg/800px-Slack_CMYK.svg.png)
+added slack-libpurple!
 
-This repo provides the steps necessary to build a
-[BitlBee](http://www.bitlbee.org/) docker image.
-
-This bitlbee includes the following plugins:
-* [Facebook](https://wiki.bitlbee.org/HowtoFacebookMQTT)
-* [Telegram](https://github.com/majn/telegram-purple)
-* [Steam](https://github.com/jgeboski/bitlbee-steam)
-* [Discord](https://github.com/sm00th/bitlbee-discord/)
-* [SkypeWeb](https://wiki.bitlbee.org/HowtoSkypeWeb)
-* [Hangouts](https://bitbucket.org/EionRobb/purple-hangouts)
-
-Docker registry
----------------
-
-This image is available at: [hub.docker.com/r/aairey/bitlbee/](https://hub.docker.com/r/aairey/bitlbee/)
+slack-libpurple guide:
+https://www.linuxjournal.com/content/what-really-ircs-me-slack
 
 Usage
 -----
+Next, you'll need to add what Slack calls a Legacy API token, which tells me at some point Slack will deprecate this and leave us out in the cold again. To do this, make sure you are logged in to Slack in your web browser, and then visit https://api.slack.com/custom-integrations/legacy-tokens. On that page, you will have the ability to generate API tokens for any Slack networks where you are a member. Once you have the API token, go back to your Bitlbee console and set it:
+
+```
+account add slack username@networkname.slack.com
+account slack set api_token xoxp-jkdfaljieowajfeiajfiawlefje
+account slack on
+```
+
+```
+chat add slack general
+/join #general
+
+channel general set auto_join true
+```
 
 It exposes port 6667 and use volume `/var/lib/bitlbee` for configuration files.
 

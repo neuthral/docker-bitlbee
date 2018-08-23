@@ -1,5 +1,5 @@
 FROM debian:stretch
-MAINTAINER aairey <airey.andy+docker@gmail.com>
+MAINTAINER neuthral tomi.kurvinen@gmail.com>
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
@@ -70,6 +70,11 @@ RUN git clone https://github.com/EionRobb/skype4pidgin.git && \
 RUN hg clone https://bitbucket.org/EionRobb/purple-hangouts/ && \
     cd purple-hangouts && \
     make && \
+    make install && \
+    cd ..
+
+RUN git clone https://github.com/dylex/slack-libpurple.git && \
+    cd slack-libpurple && \
     make install && \
     cd ..
 
